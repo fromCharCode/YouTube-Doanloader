@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# file formats
+*.mp3
+*.exe
+
+# folders
+Music/
