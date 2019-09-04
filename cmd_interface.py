@@ -27,8 +27,9 @@ class CmdInterface:
             self.clear()
         print("Insert link, press 1 for entering a path or press e to exit")
         link = input()
-        if "https://www.youtube.com/watch?v=" not in link and link != "e":
+        if "https://www.youtube.com/watch?v=" not in link and link != "e" and link != "1":
             self.fail()
+            # look at this crap above. we will need a list of commands each attached to a logical function in run
 
         return link
 
