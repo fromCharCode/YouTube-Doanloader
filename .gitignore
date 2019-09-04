@@ -105,7 +105,7 @@ venv.bak/
 
 # file formats
 *.mp3
-*.exe
+#*.exe
 
 # folders
 Music/
