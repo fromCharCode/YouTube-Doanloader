@@ -2,6 +2,12 @@ from __future__ import unicode_literals
 from downloader import Downloader
 from cmd_interface import CmdInterface
 from file_iterator import FileIterator
+import sys
+from qtpy import QtWidgets
+from ui.mainwindow import Ui_MainWindow
+from url_validator import check
+from shell_controller import output_format_information, test_audio_download
+
 
 # eva
 # ask for task
@@ -13,24 +19,121 @@ from file_iterator import FileIterator
 # we need communication between downloader, iterator, etc in here but in a way, that the
 # interface could be changed, but uses the same commands in here
 
+interface = CmdInterface
+fIter = FileIterator
+title = ""
+link = ""
+author = ""
+duration = 0
 
-ci = CmdInterface
-ci.welcome(ci)
-c = 1
+linkList = fIter.link_generator(fIter, "_done.txt")
 
-# switch case for input
-while c > 0:
-    link = ci.get_link(ci)
-    if link == "e":
-        c = -1
-        break
-    elif link == "1":
-        link = input("Insert path") # links.txt is currently placeholder
-        dl = Downloader
-        dl.download_mp3_path(dl, link)
-        # iterator shall iterate through the file, maybe yield the result. here our big
-        # goal will be to start these downloads in parallel. maybe multi threading is needed
-    else:
-        dl = Downloader
-        dl.download_mp3(dl, link)
 
+
+
+# begin with qt implementation
+app = QtWidgets.QApplication(sys.argv)
+
+
+class MainWindow(QtWidgets.QMainWindow):
+
+    def download(self):
+        self.path = self.ui.lineEdit.text()
+        print("Beginning download...")
+        test_audio_download(self.path)
+        # todo: will be led to a new class: a communicator with the console.
+
+    def get_information(self):
+        information = output_format_information(self.ui.lineEdit.text())
+        for item in information:
+            self.ui.comboBox_2.addItem(item)
+        # in following we will call those information from console output
+        #self.title =
+
+    def on_url_change(self):
+        print("url changed")
+        var = self.ui.lineEdit.text()
+        print(check(var))
+        if(check(var)):
+            self.ui.downloadButton.setEnabled(True)
+            self.get_information()
+            # todo: call method for getting all the information
+        else:
+            self.ui.downloadButton.setDisabled(True)
+            self.ui.lineEdit.setText("Your link was not a valid YouTube link...")
+            # this string will cause a graying of each element. yeah
+
+        # todo: validate the input or delete it with a warning
+
+    def __init__(self, parent = None):
+        super().__init__(parent)
+
+        #self.setWindowTitle("Youtube Downloader Version 0.2")
+
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.dl = Downloader
+        self.ui.downloadButton.clicked.connect(self.download)
+        self.ui.lineEdit.textChanged.connect(self.on_url_change)
+
+
+window = MainWindow()
+
+
+def set_download_entries():
+    window.label.setText("Downloading...")
+    dl = Downloader
+    dl.download_mp3(dl, window.lineEdit.text())
+    window.label.setText("Download succeeded!")
+    window.progressBar.setValue(100)
+    #return ui_window.lineEdit.text()
+
+window.show()
+
+"""
+    import os
+    link = "youtube.etc"
+    myCmd = "youtube-dl -F ", link
+    os.system(myCmd)
+    """
+
+"""
+    import os
+    link = "youtusoidrh"
+    myCmd = os.popen("youtube-dl -F " + link).read()
+    print(myCmd)
+    """
+
+#interface.welcome(interface)
+
+# interface should call functions from here
+# look for design patterns...
+
+# should be called from extern, like downloader
+def write_saved(self, link):
+    with open("_done.txt", "w") as file:
+        file.writelines(link)
+
+
+
+    #c = 1
+
+    # switch case for input
+    """
+    while c > 0:
+        link = interface.get_link(interface)
+        if link == "e":
+            c = -1
+            break
+        elif link == "1":
+            link = input("Insert path") # links.txt is currently placeholder
+            dl = Downloader
+            dl.download_mp3_path(dl, link)
+            # iterator shall iterate through the file, maybe yield the result. here our big
+            # goal will be to start these downloads in parallel. maybe multi threading is needed
+        else:
+            dl = Downloader
+            dl.download_mp3(dl, link)
+    """
+
+sys.exit(app.exec_())

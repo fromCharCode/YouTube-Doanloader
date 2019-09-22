@@ -6,6 +6,7 @@ class CmdInterface:
 
     # Todo: therer shall be interfaces for linux, cmd, gui, etc.
     # Todo: create method to save in specific folder. config file is needed, therefore and ydl format
+    # Todo: this must be the child of a interface class above, which will be shared by any new interface
 
     # reminder: in windows 10 Strg+V for console may be right click with mouse
 

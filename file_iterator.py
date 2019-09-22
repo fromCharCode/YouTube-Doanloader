@@ -15,7 +15,7 @@ class FileIterator:
             return s
 
     # nochmal belesen
-    def link_generator(self):
-        with self.path as file:
+    def link_generator(self, path):
+        with open(path, "r") as file:
             for line in file:
                 yield line
