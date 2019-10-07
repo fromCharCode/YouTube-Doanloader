@@ -5,7 +5,7 @@ from file_iterator import FileIterator
 import sys
 from qtpy import QtWidgets
 from ui.mainwindow import Ui_MainWindow
-from url_validator import check
+from url_validator import url_is_valid
 from shell_controller import *
 
 
@@ -61,22 +61,23 @@ class MainWindow(QtWidgets.QMainWindow):
         #self.title =
 
     def on_url_change(self):
-        print("url changed")
-        var = self.ui.lineEdit.text()
-        print(check(var))
-        if(check(var)):
+        # log print("url changed")
+        url = self.ui.lineEdit.text()
+        if(url_is_valid(url)):
             self.ui.downloadButton.setEnabled(True)
-            self.get_information()
-            # todo: call method for getting all the information
+            #self.get_information()
         else:
             self.ui.downloadButton.setDisabled(True)
             self.ui.lineEdit.setText("Your link was not a valid YouTube link...")
             # this string will cause a graying of each element. yeah
 
-        # todo: validate the input or delete it with a warning
+    def call_updater(self):
+        update_ydl()
 
     def __init__(self, parent = None):
         super().__init__(parent)
+
+        self.call_updater()
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -86,8 +87,25 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowTitle("Youtube Downloader Version 0.2")
 
 
+    def set_label_updating(self):
+        self.ui.label.setText("Updating... Please wait")
+
+
+    def set_label_downloading(self):
+        self.ui.label.setText("Downloading...")
+
+    def set_label_success(self):
+        self.ui.label.setText("Download succeeded")
+
+    # for future cases
+    def set_label_failed(self):
+        self.ui.label.setText("Download failed")
+
+
 window = MainWindow()
 window.show()
+
+
 
 def set_download_entries():
     window.label.setText("Downloading...")
