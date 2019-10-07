@@ -6,7 +6,7 @@ import sys
 from qtpy import QtWidgets
 from ui.mainwindow import Ui_MainWindow
 from url_validator import check
-from shell_controller import output_format_information, test_audio_download
+from shell_controller import *
 
 
 # eva
@@ -37,11 +37,21 @@ app = QtWidgets.QApplication(sys.argv)
 
 class MainWindow(QtWidgets.QMainWindow):
 
+    def read_format(self):
+        return self.ui.comboBox.currentText()
+
+
     def download(self):
-        self.path = self.ui.lineEdit.text()
+        link = self.ui.lineEdit.text()
+        f = self.read_format()
         print("Beginning download...")
-        test_audio_download(self.path)
-        # todo: will be led to a new class: a communicator with the console.
+
+        if (f == "mp3"):
+            quick_mp3_download(link)
+        elif (f == "mp4"):
+            quick_mp4_download(link)
+
+        # todo: will be led to a new class: a communicator with the console. (?)
 
     def get_information(self):
         information = output_format_information(self.ui.lineEdit.text())
@@ -68,17 +78,16 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
 
-        #self.setWindowTitle("Youtube Downloader Version 0.2")
-
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.dl = Downloader
         self.ui.downloadButton.clicked.connect(self.download)
         self.ui.lineEdit.textChanged.connect(self.on_url_change)
+        self.setWindowTitle("Youtube Downloader Version 0.2")
 
 
 window = MainWindow()
-
+window.show()
 
 def set_download_entries():
     window.label.setText("Downloading...")
@@ -88,7 +97,7 @@ def set_download_entries():
     window.progressBar.setValue(100)
     #return ui_window.lineEdit.text()
 
-window.show()
+
 
 """
     import os

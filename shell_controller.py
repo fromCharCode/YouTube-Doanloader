@@ -32,9 +32,24 @@ def duration_information(link):
     pass
 
 
-def test_audio_download(link):
-    x = "youtube-dl -f 137+251 " + link
-    subprocess.Popen(x, shell=True, stdout=subprocess.PIPE)
+def quick_mp3_download(link):
+    # the way below can download youtube mp3 without ffmpeg
+    x = "youtube-dl --extract-audio --audio-format mp3 " + link
+    print(x)
+    # label will download from here "downloading..."
+    subprocess.Popen(x, shell=True, stdout=subprocess.PIPE).wait()
+    print("Download finished")
+    # label needs to change here!
 
+def quick_mp4_download(link):
+    x = "youtube-dl -f best " + link
+    print(x)
+    # label will download here..
+    subprocess.Popen(x, shell=False, stdout=subprocess.PIPE).wait()
+    print("Download finished")
+    # l c
 
+# youtube-dl -f best 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
+
+# https://www.youtube.com/watch?v=VpwCnylNdLk
 # https://www.youtube.com/watch?v=ekL2qVdOR98
