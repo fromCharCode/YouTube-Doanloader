@@ -6,7 +6,7 @@ import sys
 from qtpy import QtWidgets
 from ui.mainwindow import Ui_MainWindow
 from url_validator import url_is_valid
-from shell_controller import *
+from shell_controller import duration_information, output_format_information, quick_mp3_download, quick_mp4_download, update_ydl
 
 
 # eva
@@ -37,6 +37,7 @@ app = QtWidgets.QApplication(sys.argv)
 
 class MainWindow(QtWidgets.QMainWindow):
 
+
     def read_format(self):
         return self.ui.comboBox.currentText()
 
@@ -44,7 +45,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def download(self):
         link = self.ui.lineEdit.text()
         f = self.read_format()
-        print("Beginning download...")
+        print("Beginning download..." + f)
 
         if (f == "mp3"):
             quick_mp3_download(link)
@@ -54,7 +55,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # todo: will be led to a new class: a communicator with the console. (?)
 
     def get_information(self):
-        information = output_format_information(self.ui.lineEdit.text())
+        information = self.sc.output_format_information(self.ui.lineEdit.text())
         for item in information:
             self.ui.comboBox_2.addItem(item)
         # in following we will call those information from console output
@@ -71,13 +72,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.lineEdit.setText("Your link was not a valid YouTube link...")
             # this string will cause a graying of each element. yeah
 
-    def call_updater(self):
-        update_ydl()
 
-    def __init__(self, parent = None):
+    def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.call_updater()
+        update_ydl()
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -87,19 +86,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowTitle("Youtube Downloader Version 0.2")
 
 
-    def set_label_updating(self):
-        self.ui.label.setText("Updating... Please wait")
 
-
-    def set_label_downloading(self):
-        self.ui.label.setText("Downloading...")
-
-    def set_label_success(self):
-        self.ui.label.setText("Download succeeded")
-
-    # for future cases
-    def set_label_failed(self):
-        self.ui.label.setText("Download failed")
 
 
 window = MainWindow()
@@ -115,7 +102,19 @@ def set_download_entries():
     window.progressBar.setValue(100)
     #return ui_window.lineEdit.text()
 
+def set_label_updating(self):
+    window.ui.label.setText("Updating... Please wait")
 
+
+def set_label_downloading(self):
+    window.ui.label.setText("Downloading...")
+
+def set_label_success(self):
+    window.ui.label.setText("Download succeeded")
+
+    # for future cases
+def set_label_failed(self):
+    window.ui.label.setText("Download failed")
 
 """
     import os

@@ -1,5 +1,5 @@
 import subprocess
-from run import MainWindow
+#from run import set_label_success, set_label_downloading, set_label_failed, set_label_updating
 
 
 def output_format_information(link):
@@ -31,7 +31,7 @@ def output_format_information(link):
 
 
 def update_ydl():
-    MainWindow.set_label_updating()
+    #set_label_updating()
     subprocess.Popen("pip install --upgrade youtube-dl", shell=False, stdout=subprocess.PIPE).wait()
 
 
@@ -41,20 +41,20 @@ def duration_information(link):
 
 def quick_mp3_download(link):
     console_text = "youtube-dl --extract-audio --audio-format mp3 " + link
-    # print(x) logging later
+    print(console_text) # todo: logging later
     download(console_text)
 
 
 def quick_mp4_download(link):
     console_text = "youtube-dl -f best " + link
-    # print(x)
+    print(console_text)
     download(console_text)
 
 
 def download(input):
-    MainWindow.set_label_downloading()
+    #set_label_downloading()
     subprocess.Popen(input, shell=False, stdout=subprocess.PIPE).wait()
-    MainWindow.set_label_success()
+    #set_label_success()
 
 
 # valid examples
