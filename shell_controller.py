@@ -78,6 +78,10 @@ def download(input):
 
     #set_label_success()
 
+class Controller():
+    pass
+
+
 
 # valid examples
 # youtube-dl -f best 'http://www.youtube.com/watch?v=P9pzm5b6FFY'

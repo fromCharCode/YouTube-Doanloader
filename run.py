@@ -8,6 +8,7 @@ from ui.mainwindow import Ui_MainWindow
 from url_validator import url_is_valid
 from shell_controller import duration_information, output_format_information, quick_mp3_download, quick_mp4_download, update_ydl
 import logging
+from PyQt5.QtGui import QIcon
 
 
 # eva
@@ -92,10 +93,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.dl = Downloader
         self.ui.downloadButton.clicked.connect(self.download)
         self.ui.lineEdit.textChanged.connect(self.on_url_change)
-        self.setWindowTitle("Youtube Downloader Version Alpha 0.4")
+        self.setWindowTitle("Youtube Downloader Version Alpha 0.4.1")
 
 
 window = MainWindow()
+window.setWindowIcon(QIcon("Ydl_V2.png"))
 window.show()
 
 
