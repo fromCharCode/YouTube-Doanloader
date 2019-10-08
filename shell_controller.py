@@ -1,7 +1,24 @@
 import subprocess
-#from run import set_label_success, set_label_downloading, set_label_failed, set_label_updating
+import logging
+#  from run import set_label_success, set_label_downloading, set_label_failed, set_label_updating
+
+logger = logging.getLogger(__name__)  # now we use logger.debug, etc.
+logger.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter(style="{", fmt="{asctime} [{levelname}] {message}", datefmt="%d.%m.%Y %H:%M:%S")
+
+file_handler = logging.FileHandler('shell_controller.log')
+file_handler.setFormatter(formatter)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+stream_handler.setLevel(logging.INFO)
+
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
 
 
+# deprecated
 def output_format_information(link):
 
     x = "youtube-dl -F " + link + " --no-playlist"
@@ -31,7 +48,8 @@ def output_format_information(link):
 
 
 def update_ydl():
-    #set_label_updating()
+    #  set_label_updating()
+    logger.debug("Enter update_ydl()")
     subprocess.Popen("pip install --upgrade youtube-dl", shell=False, stdout=subprocess.PIPE).wait()
 
 
@@ -41,19 +59,23 @@ def duration_information(link):
 
 def quick_mp3_download(link):
     console_text = "youtube-dl --extract-audio --audio-format mp3 " + link
-    print(console_text) # todo: logging later
     download(console_text)
 
 
 def quick_mp4_download(link):
     console_text = "youtube-dl -f best " + link
-    print(console_text)
     download(console_text)
 
 
 def download(input):
+    logger.debug(input)
     #set_label_downloading()
-    subprocess.Popen(input, shell=False, stdout=subprocess.PIPE).wait()
+    try:
+        subprocess.Popen(input, shell=False, stdout=subprocess.PIPE).wait()
+        logger.info("Download succeeded")
+    except:
+        logger.exception("Download failed")
+
     #set_label_success()
 
 
