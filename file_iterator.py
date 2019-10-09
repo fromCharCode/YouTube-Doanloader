@@ -1,5 +1,7 @@
+# todo: possibly deprecated.
+
 class FileIterator:
-    # class is prototype. maybe will be changed into real iterator, if necessary
+    # eventually rename later since it is not an iterator pattern
     # there is much to do here!
 
     path = ""

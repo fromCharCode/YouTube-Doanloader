@@ -1,0 +1,3 @@
+
+class YdlView():
+    pass

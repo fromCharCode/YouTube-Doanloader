@@ -1,7 +1,7 @@
+# todo: yet this class seems to be needed
+# it probably should be removed later
+
 import youtube_dl
-
-# important: this program has to be tested in console, else it's buggy. the IDE console reacts strange to links.
-
 
 class Downloader:
 
@@ -22,12 +22,6 @@ class Downloader:
         }],
     }
 
-    # we could create a queue in case the program has something to tell, e.g. "succeeded",
-    # but the interface is too fast
-
-    # def download_part(begin, end): # looks like an feature.. as plugin.
-    # possible pattern. but limited plugins per type, else we get conflicts.(?)
-
     def download(self, link):
         ydl_opts = {
             'format': 'bestaudio/best',
@@ -39,7 +33,7 @@ class Downloader:
         }
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([link])
-            print("download succeded!") # else it crashes in ydl.*
+            print("downloader.py: download succeeded!")
 
     def download_path(self, path, codec):
         self.codec = codec

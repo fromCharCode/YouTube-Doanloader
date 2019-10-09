@@ -1,14 +1,11 @@
+# todo: this file may not be deprecated yet. it could later be a child of the view
+
 import os
 import colorama
 
 
-class CmdInterface:
-
-    # Todo: therer shall be interfaces for linux, cmd, gui, etc.
-    # Todo: create method to save in specific folder. config file is needed, therefore and ydl format
-    # Todo: this must be the child of a interface class above, which will be shared by any new interface
-
-    # reminder: in windows 10 Strg+V for console may be right click with mouse
+# class CMDInterface(YdlView)
+class CmdInterface():
 
     askClear = False
     clear = lambda: os.system('cls')
@@ -41,10 +38,3 @@ class CmdInterface:
 
     def change_ask_clear(self):
         self.askClear = not self.askClear
-
-    # implement logic here later?
-    # brainstorm what can be done, what
-    # shall be done in what part
-    # this is menu interface
-    # a menu should always be build around an existing logic,
-    # but with implementing the api

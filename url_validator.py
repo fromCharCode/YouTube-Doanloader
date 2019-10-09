@@ -1,3 +1,8 @@
+"""
+This entire file is deprecated and will be deleted when MVC is working
+"""
+
+
 # import something for getting error codes
 import validators
 import re
@@ -21,18 +26,15 @@ logger.addHandler(stream_handler)
 
 def url_is_valid(link):
 
-    # todo: check if is not working link, but yet valid
-
+    '''
     # regular expression - must be with this beginning:
     pattern = re.compile(r'^https://www.youtube.com/watch\?v=')
-
-    # .youtube.com/watch?v=[a-z0-9]{11,}
-
-    # todo: print matches in debugger (log.debug)
+    # test later
+    if len(pattern)== 0:
+        return False
+    '''
     return validators.url(link)
 
 
-    # https://www.youtube.com/watch?v=ehs6vQTFPoA
-    # return validation
-    #return validators.url(link)
+    # link for testing purposes: https://www.youtube.com/watch?v=ehs6vQTFPoA
 

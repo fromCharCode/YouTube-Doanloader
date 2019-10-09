@@ -11,15 +11,9 @@ import logging
 from PyQt5.QtGui import QIcon
 
 
-# eva
-# ask for task
-# get input
-# path -> iterator read
-# else just write what is currently saved
-# therefore: getName, getDuration, author, link
-# this is supposed to become the big logical centre of this program, or the frame around it.
-# we need communication between downloader, iterator, etc in here but in a way, that the
-# interface could be changed, but uses the same commands in here
+# This file will run the program
+# The pattern used is the Model View Controller
+# This file will initialize the YdlController
 
 
 logger = logging.getLogger(__name__)  # now we use logger.debug, etc.
