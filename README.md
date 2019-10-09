@@ -1,10 +1,10 @@
 ﻿# YouTube-Downloader
 
 > This tool is for downloading mp3/mp4 from YouTube in a fast way.
-> wma is currently not working. 
-> there is one quality yet (the best anyway)
-> no i18n. 
-> The menu is kept as simple as possible.
+>- wma is currently not working. 
+>- there is one quality yet (the best anyway)
+>- no i18n. 
+>- The menu is kept as simple as possible.
 
 # languages
 >- german
@@ -28,6 +28,11 @@
 >- download in MORE different formats | B
 >- check if song has been downloaded in past | B
 >- output information about downloads (?) | C
+>- I18n | D
+>- different qualities | D
+>- cutting feature |D
+>- embedded player for youtube and the cutting | B
+>- listing for lists | D
 >- implement debugger | A
 >- setup.py
 
