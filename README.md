@@ -12,6 +12,9 @@
 # requirements
 >- python 3
 >- youtube-dl
+>- ffmpeg.exe
+>- ffplay.exe
+>- ffprobe.exe
 
 # features
 >- download mp3 with inserting a link
@@ -21,6 +24,7 @@
 >- Logger
 
 # planned features
+>- linux support | A
 >- download in MORE different formats | B
 >- check if song has been downloaded in past | B
 >- output information about downloads (?) | C
