@@ -88,7 +88,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowIcon(QIcon("icons/Ydl_V2.png"))
         self.ui.downloadButton.clicked.connect(self.download)
         self.ui.lineEdit.textChanged.connect(self.on_url_change)
-        self.setWindowTitle("Youtube Downloader Version Alpha 0.4.2")
+        self.setWindowTitle("YouTube-Downloader Version Alpha 0.4.2")
 
 
 window = MainWindow()

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd893a3-8255-4e27-9877-b24f7719277a" name="Default" comment="updated .gitignore">
-      <change afterPath="$PROJECT_DIR$/action_listener_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commandline_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/observable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ydl_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ydl_qt_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ydl_controller_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/ydl_controller_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ydl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ydl_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ydl_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/ydl_view.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +74,7 @@
             <entry file="file://$PROJECT_DIR$/ydl_qt_view.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="68">
-                  <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+                  <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -95,13 +88,25 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ydl_view.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
-                  <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+                  <caret line="10" column="79" lean-forward="true" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/run.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="493">
+                  <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -119,15 +124,6 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/downloader.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -136,7 +132,7 @@
             <entry file="file://$PROJECT_DIR$/ydl_view.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
+                  <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -147,7 +143,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ydl_model.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
+                <state relative-caret-position="357">
                   <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
@@ -183,7 +179,6 @@
         <option value="$PROJECT_DIR$/venv/build.py" />
         <option value="$PROJECT_DIR$/shell_controller.py" />
         <option value="$PROJECT_DIR$/url_validator.py" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/build.py" />
         <option value="$PROJECT_DIR$/cmd_interface.py" />
         <option value="$PROJECT_DIR$/file_iterator.py" />
@@ -197,6 +192,7 @@
         <option value="$PROJECT_DIR$/observer.py" />
         <option value="$PROJECT_DIR$/ydl_model.py" />
         <option value="$PROJECT_DIR$/ydl_view.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -332,7 +328,7 @@
       <workItem from="1570436673747" duration="11618000" />
       <workItem from="1570523964660" duration="5901000" />
       <workItem from="1570604391054" duration="9805000" />
-      <workItem from="1570622630391" duration="4200000" />
+      <workItem from="1570622630391" duration="5937000" />
     </task>
     <task id="LOCAL-00001" summary="updated .gitignore">
       <created>1567595259733</created>
@@ -345,7 +341,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83888000" />
+    <option name="totallyTimeSpent" value="85625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
@@ -356,7 +352,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.33229572" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3317757" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39890283" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,7 +381,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/YouTube_Downloader$build.coverage" NAME="build Coverage Results" MODIFIED="1570559903581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/YouTube_Downloader$run.coverage" NAME="run Coverage Results" MODIFIED="1570563199461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YouTube_Downloader$run.coverage" NAME="run Coverage Results" MODIFIED="1570627057688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/YTDownloader$run.coverage" NAME="run Coverage Results" MODIFIED="1567586227456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
@@ -501,16 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shell_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -583,7 +569,7 @@
     <entry file="file://$PROJECT_DIR$/ydl_qt_view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -614,9 +600,19 @@
     <entry file="file://$PROJECT_DIR$/ydl_view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="10" column="79" lean-forward="true" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,7 +8,7 @@ class YdlView(Observer):
     def __init__(self, model: ydl_model.YdlModel, controller: ydl_controller_interface):
         self.__model = model
         self.__controller = controller
-        # model.subscribe(self) # todo: research if this one goes into controller
+        model.subscribe(self) # todo: research if this one goes into controller
 
         self.__title = ""
         self.__duration = ""
