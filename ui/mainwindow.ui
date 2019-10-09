@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>821</width>
-    <height>497</height>
+    <height>126</height>
    </rect>
   </property>
   <property name="palette">
@@ -319,7 +319,8 @@
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 109, 96);</string>
+           <string notr="true">background-color: rgb(255, 109, 96);
+color: white;</string>
           </property>
           <property name="text">
            <string>Download</string>
@@ -341,7 +342,8 @@
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 109, 96);</string>
+           <string notr="true">background-color: rgb(255, 109, 96);
+color: white;</string>
           </property>
           <item>
            <property name="text">
@@ -421,7 +423,8 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 109, 96);</string>
+           <string notr="true">background-color: rgb(255, 109, 96);
+color: white;</string>
           </property>
          </widget>
         </item>
@@ -459,7 +462,8 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 109, 96);</string>
+           <string notr="true">background-color: rgb(255, 109, 96);
+color: white;</string>
           </property>
          </widget>
         </item>
@@ -517,7 +521,8 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 109, 96);</string>
+           <string notr="true">background-color: rgb(255, 109, 96);
+color: white;</string>
           </property>
          </widget>
         </item>
